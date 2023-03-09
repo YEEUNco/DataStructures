@@ -1,7 +1,6 @@
 // C++ for C Coders & Data Structures
 // Lecture note by idebtor@gmail.com
 
-//On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이예은 Student Number: 22200550
 #include <iostream>
 #include <string>
 #include <vector>

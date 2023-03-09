@@ -2,23 +2,23 @@
 // Lecture note by idebtor@gmail.com
 //
 // Lab 2:
-//	1. vector class in c++
+//	1. Using vector class in c++
 //	2. ranged-for loop
 //	3. function overloading
 //	4. include file
 //  5. not using `using namespace std;`
-//On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이예은 Student Number: 22200550
+
 #include <iostream>
 #include <vector>
 #include <string>
-
 //using namespace std;
+
 void printfunc(int n, char *args[]);
-void printfunc(std::vector<std::string> names);
 
-int main(int argc, char **argv) {
+int main(int argc, char *argv[]) {
 
-	std::cout << "Print using printfunc(**argv) \n";
+	// pass one less of argc and argv. Do not change printfunc()."
+	std::cout << "Invoke printfunc() to print *argv[] except 1st one \n";
 	int n = argc-1;
 	char *args[n];
 	for(int i=0; i<n; i++){
@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 	
 	printfunc(n, args);
 
-	std::cout << "Copy using vector<string> \n";
+	std::cout << "Copy *argv[] except 1st one into vector<string> names \n";
 	// use push_back() method in the vector class
 	std::vector<std::string> vnames;
 	for(int i=1; i<argc; i++){
@@ -36,12 +36,16 @@ int main(int argc, char **argv) {
 
 	// print names only using for-loop and names
 	// do not use argc/argv and ranged-for loop
-	std::cout << "Print names using indexing, but not argc/argv, ranged-for\n";
+	std::cout << "Print names using for-loop, but not argc/argv, ranged-for\n";
 	for(int i=0; i<vnames.size(); i++){
 		std::cout << "Hello " << vnames[i] << "!\n";
 	}
-	
-	std::cout << "Print names using printfunc(vector<string> n)" << std::endl;
-	printfunc(vnames);
+
+	// print names using printfunc(vector<string>)
+	// use ranged-for loop in printfunc(vector<string>)
+	// do not use `using namespace std;` in printfunc.cpp 
+	// cout << "Print names using printfunc(vector<string>)\n";
+	// printfunc(names);
+
 	return 0;
 }
