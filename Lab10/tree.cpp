@@ -1,4 +1,4 @@
-﻿//On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이예은 Student Number: 22200550
+
 
 /// File: tree.cpp, treeDriver.cpp, tree.h, treenode.h
 /// implements a binary tree and/or binary search tree(BST).* and
