@@ -1,4 +1,3 @@
-﻿//On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이예은 Student Number: 22200550
 ///
 /// File: listdblx.cpp, listdbl.h
 ///       implements a doubly linked list with sentinel nodes
