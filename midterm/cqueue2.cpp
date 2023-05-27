@@ -110,7 +110,7 @@ void display(cqueue q) { // display cqueue status
         cout << "Front:Back = [" << q->front << ":" << q->back << "]\n";
         cout << "Items:[ ";
         if(q->front < q->back){
-            for( i = q->front; i ! q->back; i = i + 1){
+            for( i = q->front; i != q->back; i = i + 1){
                 cout << q->items[i] << ' ';
             }
         }
