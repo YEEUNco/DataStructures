@@ -290,6 +290,7 @@ tree trim(tree node, int key) {
 	else if (key > node->key) // node to trim is in right subtree.
 		node->right = trim(node->right, key);
 	// found the key: delete the node now 
+	
 	// node with two childeren: replace it with the successor or predecessor
 	else if (node->left == nullptr && node->right == nullptr) {
 		//cout << "your code here\n";
