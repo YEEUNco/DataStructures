@@ -1,6 +1,5 @@
 #include <iostream>
 #include <sstream>
-#include <map>
 using namespace std;
 
 int add(int a, int b){return a+b;}
@@ -25,11 +24,9 @@ int get_int(){
     return x;
 }
 
-char get_op(map<char,int (*)(int,int)> fp_map){
-    string opstr;
+pair<char,int> get_op(string opstr){
     char op;
-    for(auto x : fp_map) opstr += x.first;
-    
+    size_t x;
     do{
         stringstream ss;
         string str;
@@ -37,19 +34,20 @@ char get_op(map<char,int (*)(int,int)> fp_map){
         getline(cin, str);
         ss << str;
         ss >> op;
-        if(fp_map.at(op) == add || sub || dvd || mul) break;
-    }while(true);
-    return op;
+        x = opstr.find(op);
+    }while(x==string::npos);
+    return pair<char,int>(op,x);
 }
 
 int main(){
-    map<char,int(*)(int,int)> fp_map {make_pair('+', add), make_pair('-',sub), make_pair('*', mul), make_pair('/', dvd)};
+    int (*fp[])(int, int)={add,sub,mul,dvd};
+    string opstr{ "+-*/"};
 
     int a {get_int()};
-    char op {get_op("{+-*/}")};
+    pair<char, int> op {get_op("{+-*/}")};
     int b {get_int()};
     
-    cout  << a << " " <<op<<" " << b << " = " << fp_map[op] <<  "\n";
+    cout  << a << " " <<op.first<<" " << b << " = " << fp[op.second](a,b) <<  "\n";
 
     return 0;
 }
