@@ -11,7 +11,7 @@
 // 2018/02/10	created by idebtor@gmail.com
 // 2021/02/01	a set of test cases added for each function
 
-//On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: 이예은 Student Number: 22200550ﬁ
+//On my honor, I pledge that I have neither received nor provided improper assistance in the completion of this assignment. Signed: Student Number: 
 
 #include <iostream>
 #include <cassert>
