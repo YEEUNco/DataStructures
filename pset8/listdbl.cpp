@@ -72,8 +72,10 @@ pNode half(pList p) {
 	pNode turtle = begin(p);
 	while(rabbit != end(p)){
 		rabbit = rabbit ->next;
-		if(rabbit != end(p)) rabbit = rabbit ->next;
-		turtle = turtle->next;
+        if(rabbit != end(p)){
+            rabbit = rabbit ->next;
+            turtle = turtle->next;
+        }
 	}
 
 	return turtle;
