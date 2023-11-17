@@ -781,10 +781,10 @@ tree buildAVL(int* v, int n) {  // recreation method
 	DPRINT(cout << ">buildAVL v[0]=" << v[0] << " n=" << n << " mid=" << n / 2 << endl;);
 
 	//cout << "your code here\n";
-	int mid = (n+1)/2;
+	int mid = n/2;
 	tree root= new TreeNode(v[mid]);
 	root->left = buildAVL(v,mid);
-	root->right = buildAVL(v+mid+1, n-(mid+1));
+	root->right = buildAVL(v+mid, n-(mid+1));
 
 	return root;
 }
@@ -799,7 +799,7 @@ tree buildAVL(tree* v, int n) {  // recycling method
 	int mid = n/2;
 	tree node = v[mid];
 	node->left = buildAVL(v,mid);
-	node->right = buildAVL(v+mid+1, n-(mid+1));
+	node->right = buildAVL(v+mid, n-(mid+1));
 
 	DPRINT(cout << "<buildAVL" << n << endl;);
 	return node;
